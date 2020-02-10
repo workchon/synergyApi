@@ -8,8 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using Newtonsoft.Json;
 using IsoApiSynergy.Clases;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Newtonsoft.Json.Linq;
 
 namespace IsoApiSynergy.Controllers.SISTEMA
 {
@@ -24,11 +23,34 @@ namespace IsoApiSynergy.Controllers.SISTEMA
             DataSet DS = new DataSet();
             if (Login.verificarUsuario(ref DS, datos))
             {
-                return Ok
+                bool acceso = false;
+                if(JsonConvert.SerializeObject(DS).Length >= 14)
+                {
+                    var data = (JObject)JsonConvert.DeserializeObject(JsonConvert.SerializeObject(DS));
+                    var IdUsuario  = data.Descendants()
+                                    .OfType<JProperty>()
+                                    .FirstOrDefault(x => x.Name == "idUsuario")
+                                    ?.Value;
+                    datos.idUsuario = int.Parse(IdUsuario.ToString());
+                    acceso = Login.ActualizarAcceso(datos);
+                    Login.Dispose();
+                }
+                if (acceso)
+                {
+                    return Ok
                 (
                     new
                     {
                         data = JsonConvert.SerializeObject(DS),
+                        Tipo = "200"
+                    }
+                );
+                }
+                return Ok
+                (
+                    new
+                    {
+                        data = "No sea Encontrado Usuario",
                         Tipo = "200"
                     }
                 );
@@ -46,5 +68,10 @@ namespace IsoApiSynergy.Controllers.SISTEMA
             }
 
         }
+
+
+        
+
+
     }
 }

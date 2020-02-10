@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/synergy/Projects/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj": {}
+    "/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj": {}
   },
   "projects": {
-    "/Users/synergy/Projects/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj": {
+    "/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/synergy/Projects/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj",
+        "projectUniqueName": "/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj",
         "projectName": "IsoApiSynergy",
-        "projectPath": "/Users/synergy/Projects/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj",
+        "projectPath": "/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/IsoApiSynergy.csproj",
         "packagesPath": "/Users/synergy/.nuget/packages/",
-        "outputPath": "/Users/synergy/Projects/IsoApiSynergy/IsoApiSynergy/obj/",
+        "outputPath": "/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

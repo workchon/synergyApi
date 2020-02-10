@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Data.SqlClient;
 namespace IsoApiSynergy
 {
@@ -47,9 +48,29 @@ namespace IsoApiSynergy
 
         public void Dispose()
         {
-            conexion.Connection.Close();
-            connection.Close();
+            if (connection.State.ToString().Equals("Open"))
+            {
+                conexion.Dispose();
+                connection.Close();
+            }
+        }
 
+
+        public void Connectar()
+        {
+            if (connection.State.ToString().Equals("Closed"))
+            {
+                try
+                {
+                    conexion.Connection.Open();
+                    connection.Open();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                
+            }
         }
     }
 }

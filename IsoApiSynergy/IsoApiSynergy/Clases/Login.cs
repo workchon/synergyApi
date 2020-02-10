@@ -19,15 +19,15 @@ namespace IsoApiSynergy.Clases
             public string Email;
 
             public int idEmpresa;
+            public string dispositivo;
         }
 
 
         public bool verificarUsuario(ref DataSet DS, strLogin datos)
         {
             DS = new DataSet();
-            con.conexion.CommandText = "select * from ISOHS001 as A inner join ISODT010 as B on A.idUsuario = B.idUsuario where B.NombreUsuario = '" + datos.nombreUsuario + "'" +
-                "and B.PasswordUsuario = '" + datos.passwordUsuario + "' and idEmpresa =" + datos.idEmpresa;
-            Console.WriteLine(con.conexion.CommandText.ToString());
+            con.conexion.CommandText = "select idUsuario, idEmpresa, NombreUsuario, PasswordUsuario, IconoUsuario, Email from [ISO].[dbo].[visEmpresa_Usuario] where NombreUsuario = '" + datos.nombreUsuario + "'" +
+                "and PasswordUsuario = '" + datos.passwordUsuario + "' and idEmpresa =" + datos.idEmpresa;
             try
             {
                 SqlDataAdapter DA = new SqlDataAdapter();
@@ -39,11 +39,28 @@ namespace IsoApiSynergy.Clases
             {
                 return false;
             }
-            finally
-            {
-                con.Dispose();
-            }
 
+        }
+
+        public bool ActualizarAcceso(strLogin datos)
+        {
+            con.conexion.CommandText = " insert into[ISO].[dbo].[ISOHS001](idUsuario, idEmpresa, Dispositivo, FechaAcceso)"
+                + "values('"+datos.idUsuario+"',"+datos.idEmpresa+",'"+datos.dispositivo+ "',GETDATE())";
+
+            try
+            {
+                con.conexion.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public void Dispose()
+        {
+            con.Dispose();
         }
 
     }
