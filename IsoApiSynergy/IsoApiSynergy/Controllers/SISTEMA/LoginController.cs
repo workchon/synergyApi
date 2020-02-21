@@ -50,8 +50,8 @@ namespace IsoApiSynergy.Controllers.SISTEMA
                 (
                     new
                     {
-                        data = "No sea Encontrado Usuario",
-                        Tipo = "200"
+                        data = "No se ha encontrado el Usuario",
+                        Tipo = "202"
                     }
                 );
             }
@@ -69,6 +69,42 @@ namespace IsoApiSynergy.Controllers.SISTEMA
 
         }
 
+
+        [HttpGet]
+        [Route("Recuperar")]
+        public ActionResult EnviarCorreo([FromBody] Login.strLogin datos)
+        {
+
+            clsMail mail = new clsMail();
+            var lista = new List<string>()
+            {
+               datos.Email
+            };
+            if (mail.SMTPMail_recuperacion( "Requperacion de contraseña", " Recuperacion de contraseña", lista, "pruebachon@outlook.com", "Jesus Chon" ))
+            {
+
+                return Ok
+                    (
+                        new
+                        {
+                            data = "Correo enviado Exitosamente",
+                            Tipo = "200"
+                        }
+                    );
+            }else
+            {
+
+                return Ok
+                    (
+                        new
+                        {
+                            data = "Error al enviar correo ",
+                            Tipo = "202"
+                        }
+                    );
+            }
+
+        }
 
         
 

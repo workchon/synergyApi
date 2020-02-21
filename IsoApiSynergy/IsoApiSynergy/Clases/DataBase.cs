@@ -10,7 +10,7 @@ namespace IsoApiSynergy
         public Boolean ErrorConexion = false;
         public DataBase()
         {
-            string cadena = "Server=127.0.0.1;Database=ISO;User Id=sa;Password=PassWord123;";
+            string cadena = "Server=synergyapi.database.windows.net;Database=ISO;User Id=thanos;Password=PassWord123;";
             try
             {
                 connection.ConnectionString = cadena;

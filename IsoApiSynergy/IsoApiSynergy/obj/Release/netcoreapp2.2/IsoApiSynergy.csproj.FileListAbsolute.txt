@@ -1,0 +1,16 @@
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/appsettings.Development.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/appsettings.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/Properties/launchSettings.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/IsoApiSynergy.deps.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/IsoApiSynergy.runtimeconfig.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/IsoApiSynergy.runtimeconfig.dev.json
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/IsoApiSynergy.dll
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/bin/Release/netcoreapp2.2/IsoApiSynergy.pdb
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.csprojAssemblyReference.cache
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.RazorAssemblyInfo.cache
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.RazorAssemblyInfo.cs
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.AssemblyInfoInputs.cache
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.AssemblyInfo.cs
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.RazorTargetAssemblyInfo.cache
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.dll
+/Users/synergy/Projects/synergyApi/IsoApiSynergy/IsoApiSynergy/obj/Release/netcoreapp2.2/IsoApiSynergy.pdb

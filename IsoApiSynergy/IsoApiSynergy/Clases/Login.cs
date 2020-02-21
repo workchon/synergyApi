@@ -25,6 +25,7 @@ namespace IsoApiSynergy.Clases
 
         public bool verificarUsuario(ref DataSet DS, strLogin datos)
         {
+
             DS = new DataSet();
             con.conexion.CommandText = "select idUsuario, idEmpresa, NombreUsuario, PasswordUsuario, IconoUsuario, Email from [ISO].[dbo].[visEmpresa_Usuario] where NombreUsuario = '" + datos.nombreUsuario + "'" +
                 "and PasswordUsuario = '" + datos.passwordUsuario + "' and idEmpresa =" + datos.idEmpresa;
@@ -53,6 +54,27 @@ namespace IsoApiSynergy.Clases
                 return true;
             }
             catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public bool RecuperarContraseña(ref DataSet DS, strLogin datos)
+        {
+            //devuelve la contraseña que tenia el usuario
+
+            DS = new DataSet();
+            con.conexion.CommandText = "select idUsuario, idEmpresa, NombreUsuario, PasswordUsuario, IconoUsuario, Email from [ISO].[dbo].[visEmpresa_Usuario] where NombreUsuario = '" + datos.nombreUsuario + "'" +
+                "and Email = '" + datos.Email + "'";
+            try
+            {
+                SqlDataAdapter DA = new SqlDataAdapter();
+                DA.SelectCommand = con.conexion;
+                DA.Fill(DS);
+                return true;
+            }
+            catch
             {
                 return false;
             }
